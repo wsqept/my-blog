@@ -3,34 +3,34 @@ import DefaultTheme from 'vitepress/theme'
 import { h } from 'vue'
 import Giscus from '@giscus/vue'
 import { useData, useRoute } from 'vitepress'
-import './style.css' // 确保你还保留着引入css的这行（如果有的话）
+import './style.css' // 确保这里有style.css
+// 1. 引入刚才写的动画组件
+import Intro from './components/Intro.vue'
 
 export default {
   extends: DefaultTheme,
   Layout() {
-    // 1. 获取当前是否为深色模式的状态 (isDark 是一个响应式变量)
     const { isDark, frontmatter } = useData()
     const route = useRoute()
 
     return h(DefaultTheme.Layout, null, {
+      // 2. 把动画插到页面的最顶层 (layout-top)
+      'layout-top': () => h(Intro),
+
+      // 3. 原来的评论区逻辑保持不变
       'doc-after': () => {
-        // 判断文章是否允许评论
         if (frontmatter.value.comments !== false) {
           return h(Giscus, {
-            repo: "wsqept/my-blog", // 替换你的信息
-            repoId: "R_kgDOQd0wTg",
+            repo: "wsqept/my-blog", 
+            repoId: "R_kgDOQd0wTg", // 记得把你的ID填回来！
             category: "Announcements",
-            categoryId: "DIC_kwDOQd0wTs4CzG8H",
+            categoryId: "DIC_kwDOQd0wTs4CzG8H", // 记得把你的ID填回来！
             mapping: "pathname",
             strict: "0",
             reactionsEnabled: "1",
             emitMetadata: "0",
             inputPosition: "top",
-            
-            // 2. ★★★ 核心代码 ★★★
-            // 如果 isDark 为真，就用透明深色；否则用浅色
-            theme: isDark.value ? 'transparent_dark' : 'light', 
-            
+            theme: isDark.value ? 'transparent_dark' : 'light',
             lang: "zh-CN",
             loading: "lazy",
             key: route.path
