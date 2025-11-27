@@ -14,7 +14,7 @@
 
 /* 2. 这是我们要用 JS 动态添加的类名 */
 .animate-fade-in {
-  animation: fade-slide-in 0.4s ease-out forwards;
+  animation: fade-slide-in 0.8s ease-in-out forwards;
 }
 
 /* 3. 极其重要：防止动画播放时出现瞬间的闪烁或布局跳动 */
