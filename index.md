@@ -29,4 +29,7 @@ features:
   - title: Reading
     details: 一种生活，精神上的
     link: /posts/Reading/
+  - title: Music
+    details: 古典的、现代的，流行的、非主流的
+    link: /posts/Music/
 ---

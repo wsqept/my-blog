@@ -20,6 +20,7 @@ export default defineConfig({
       { text: 'Tech', link: '/posts/Tech/' }, 
       { text: 'Script', link: '/posts/Script/' }, 
       { text: 'Movie', link: '/posts/Movie/' }, 
+      { text: 'Music', link: '/posts/Music/' }, 
       { text: 'Reading', link: '/posts/Reading/' },
       { 
         text: '关于我', 
