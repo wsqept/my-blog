@@ -1,1 +1,24 @@
 /* 这里存放自定义样式 */
+/* .vitepress/theme/style.css */
+
+/* 定义关键帧：从透明且下沉 20px，变为不透明且复位 */
+@keyframes slide-fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 这个类名会被 JS 动态添加到内容区域 */
+.animate-content {
+  animation: slide-fade-in 0.4s ease-out forwards;
+}
+
+/* 优化：为了防止动画过程中出现滚动条抖动 */
+.VPContent {
+  will-change: transform, opacity;
+}

@@ -1,23 +1,21 @@
 // .vitepress/theme/index.ts
 import DefaultTheme from 'vitepress/theme'
-import { h } from 'vue'
+import { h, nextTick } from 'vue' // 引入 nextTick
 import Giscus from '@giscus/vue'
 import { useData, useRoute } from 'vitepress'
-import './style.css' // 确保这里有style.css
-// 1. 引入刚才写的动画组件
+import './style.css'
 import Intro from './components/Intro.vue'
 
 export default {
   extends: DefaultTheme,
+
+  // 1. 布局逻辑 (Intro + Giscus)
   Layout() {
     const { isDark, frontmatter } = useData()
     const route = useRoute()
 
     return h(DefaultTheme.Layout, null, {
-      // 2. 把动画插到页面的最顶层 (layout-top)
       'layout-top': () => h(Intro),
-
-      // 3. 原来的评论区逻辑保持不变
       'doc-after': () => {
         if (frontmatter.value.comments !== false) {
           return h(Giscus, {
@@ -38,5 +36,30 @@ export default {
         }
       }
     })
+  },
+
+  // 2. ★★★ 增强逻辑：处理路由转场动画 ★★★
+  enhanceApp({ router }) {
+    // 确保在浏览器环境下运行
+    if (typeof window !== 'undefined') {
+      router.onAfterRouteChanged = async () => {
+        // 等待 Vue 渲染完成
+        await nextTick()
+        
+        // 找到 VitePress 的主内容容器
+        const content = document.querySelector('.VPContent')
+        
+        if (content) {
+          // 移除动画类（如果存在），为了重置状态
+          content.classList.remove('animate-content')
+          
+          // 强制浏览器重绘 (Reflow)，这样才能重新触发动画
+          void content.offsetWidth 
+          
+          // 添加动画类，开始播放
+          content.classList.add('animate-content')
+        }
+      }
+    }
   }
 }
