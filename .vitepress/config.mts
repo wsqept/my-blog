@@ -7,7 +7,7 @@ export default defineConfig({
 
   // 站点基本信息
   title: "wsqept's Blog",
-  description: "记录生活与技术",
+  description: "记录",
 
   themeConfig: {
     // 1. 网站左上角的 Logo (确保 public 文件夹里有 avatar.jpg)
@@ -17,13 +17,14 @@ export default defineConfig({
     // 注意：你设置了 /posts/Script/，请确保目录结构对应
     nav: [
       { text: '首页', link: '/' },
-      { text: '生活', link: '/posts/Script/' }, 
-      { text: '编程', link: '/posts/Tech/' },
+      { text: 'Tech', link: '/posts/Tech/' }, 
+      { text: 'Script', link: '/posts/Script/' }, 
+      { text: 'Movie', link: '/posts/Movie/' }, 
+      { text: 'Reading', link: '/posts/Reading/' },
       { 
         text: '关于我', 
         items: [
           { text: 'GitHub', link: 'https://github.com/wsqept' },
-          { text: '联系方式', link: '/contact' } // 记得创建 contact.md
         ]
       }
     ],
