@@ -18,7 +18,12 @@ export default defineConfig({
     nav: [
       { text: '首页', link: '/' },
       { text: 'Tech', link: '/posts/Tech/' }, 
-      { text: 'Script', link: '/posts/Script/' }, 
+      {
+        text: 'Script',
+        items: [
+          { text: '一只鸟在等撞死它的玻璃', link: '/posts/script/一只鸟在等撞死它的玻璃' },
+        ]
+      },
       { text: 'Movie', link: '/posts/Movie/' }, 
       { text: 'Reading', link: '/posts/Reading/' },
       { 

@@ -4,7 +4,7 @@ layout: home
 hero:
   name: "wsqept's Blog"
   text: "记录"
-  tagline: ""
+  tagline: "伟大的戏仿"
   image:
     src: /avatar.jpg   # 确保你把 avatar.jpg 放进了 public 文件夹
     alt: 我的头像
