@@ -32,7 +32,7 @@ export default defineConfig({
 
     // 3. 侧边栏 (Sidebar)
     // 我根据你的 Nav 自动帮你补全了侧边栏配置，否则点击导航进去左边是空的
-    sidebar: {
+    /*sidebar: {
       '/posts/Script/': [
         {
           text: '一只鸟等着一面撞死它的玻璃',
@@ -43,7 +43,7 @@ export default defineConfig({
           ]
         }
       ],
-    },
+    },*/
 
     // 4. 社交图标
     socialLinks: [
