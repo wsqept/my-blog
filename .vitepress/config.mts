@@ -34,11 +34,11 @@ export default defineConfig({
     sidebar: {
       '/posts/Script/': [
         {
-          text: '生活记录',
+          text: '一只鸟等着一面撞死它的玻璃',
           items: [
             // 这里的 link 对应你实际创建的 .md 文件
             // 例如: /posts/Script/my-story.md
-            { text: '示例文章', link: '/posts/Script/example' } 
+            { text: '一只鸟等着一面撞死它的玻璃', link: '/posts/Script/一只鸟等着一面撞死它的玻璃' } 
           ]
         }
       ],
