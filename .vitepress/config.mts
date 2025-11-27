@@ -1,3 +1,5 @@
+import { defineConfig } from 'vitepress'
+
 export default defineConfig({
   // ...前面的 base 等配置保持不变...
 
