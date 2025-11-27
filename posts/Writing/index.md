@@ -2,7 +2,7 @@
 title: Writing
 ---
 
-# Tech
+# Writing
 信念的找回，一种创造
 
 ##
