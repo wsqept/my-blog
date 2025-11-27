@@ -55,5 +55,13 @@ export default defineConfig({
     //search: {
     //  provider: 'local'
     //}
+    head: [
+    // 这里的 href 对应你 public 文件夹里的文件名
+    ['link', { rel: 'icon', href: '/headd.ico' }]
+  ],
+
+  themeConfig: {
+    // ...
+  }
   }
 })
