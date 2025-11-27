@@ -39,27 +39,32 @@ export default {
   },
 
   // 2. ★★★ 增强逻辑：处理路由转场动画 ★★★
+  // .vitepress/theme/index.ts 的 imports 区域需要保留
+
+  // ★★★ 修复后的 enhanceApp 逻辑 ★★★
   enhanceApp({ router }) {
-    // 确保在浏览器环境下运行
     if (typeof window !== 'undefined') {
       router.onAfterRouteChanged = async () => {
-        // 等待 Vue 渲染完成
+        // 1. 等待 Vue 虚拟 DOM 更新完毕
         await nextTick()
         
-        // 找到 VitePress 的主内容容器
-        const content = document.querySelector('.VPContent')
-        
-        if (content) {
-          // 移除动画类（如果存在），为了重置状态
-          content.classList.remove('animate-content')
+        // 2. 增加一个小小的延时 (20ms)，确保浏览器已经把新页面“画”出来了
+        setTimeout(() => {
+          // 3. 同时尝试获取“文章容器”或“主页容器”
+          // 这里的逻辑是：如果找不到 .VPContent，就找 .VPHome
+          const content = document.querySelector('.VPContent') || document.querySelector('.VPHome')
           
-          // 强制浏览器重绘 (Reflow)，这样才能重新触发动画
-          void content.offsetWidth 
-          
-          // 添加动画类，开始播放
-          content.classList.add('animate-content')
-        }
+          if (content) {
+            // 先移除类名（重置状态）
+            content.classList.remove('animate-fade-in')
+            
+            // 触发回流 (Reflow)，这是重启 CSS 动画的黑魔法
+            void content.offsetWidth
+            
+            // 重新添加类名（开始播放）
+            content.classList.add('animate-fade-in')
+          }
+        }, 20)
       }
     }
   }
-}

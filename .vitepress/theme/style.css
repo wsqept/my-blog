@@ -1,11 +1,10 @@
-/* 这里存放自定义样式 */
 /* .vitepress/theme/style.css */
 
-/* 定义关键帧：从透明且下沉 20px，变为不透明且复位 */
-@keyframes slide-fade-in {
+/* 1. 定义关键帧：从下往上浮动 + 淡入 */
+@keyframes fade-slide-in {
   0% {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(10px); /* 稍微移动一点点即可，极简风 */
   }
   100% {
     opacity: 1;
@@ -13,12 +12,12 @@
   }
 }
 
-/* 这个类名会被 JS 动态添加到内容区域 */
-.animate-content {
-  animation: slide-fade-in 0.4s ease-out forwards;
+/* 2. 这是我们要用 JS 动态添加的类名 */
+.animate-fade-in {
+  animation: fade-slide-in 0.4s ease-out forwards;
 }
 
-/* 优化：为了防止动画过程中出现滚动条抖动 */
-.VPContent {
-  will-change: transform, opacity;
+/* 3. 极其重要：防止动画播放时出现瞬间的闪烁或布局跳动 */
+.VPContent, .VPHome {
+  will-change: opacity, transform;
 }
