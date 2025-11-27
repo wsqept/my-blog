@@ -52,8 +52,8 @@ export default defineConfig({
     ],
 
     // 6. 开启本地搜索
-    search: {
-      provider: 'local'
-    }
+    //search: {
+    //  provider: 'local'
+    //}
   }
 })
