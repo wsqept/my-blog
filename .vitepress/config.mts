@@ -57,12 +57,6 @@ export default defineConfig({
       { icon: 'github', link: 'https://github.com/wsqept' }
     ],
 
-    // 5. 页脚
-    footer: {
-      message: 'Powered by VitePress',
-      copyright: 'Copyright © 2024 wsqept'
-    },
-    
     // 6. 开启本地搜索
     search: {
       provider: 'local'
