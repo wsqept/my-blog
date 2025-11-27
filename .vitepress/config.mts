@@ -22,6 +22,7 @@ export default defineConfig({
       { text: 'Movie', link: '/posts/Movie/index' }, 
       { text: 'Music', link: '/posts/Music/index' }, 
       { text: 'Reading', link: '/posts/Reading/index' },
+      { text: 'Writing', link: '/posts/Writing/index' },
       { 
         text: '关于我', 
         items: [

@@ -32,4 +32,7 @@ features:
   - title: Music
     details: 古典的、现代的，流行的、非主流的
     link: /posts/Music/index
+  - title: Writing
+    details: 信念的找回，一种创造
+    link: /posts/Tech/index
 ---
