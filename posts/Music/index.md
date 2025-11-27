@@ -1,9 +1,6 @@
 ---
-title: 音乐收藏
+title: Music
 ---
 
-# 🎵 音乐分享
-我的年度歌单与乐评。
-
-- [周杰伦专辑回顾](/posts/music/jay-chou)
-- [摇滚乐入门推荐](/posts/music/rock-intro)
+# Music
+古典的、现代的，流行的，非主流的

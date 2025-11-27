@@ -2,8 +2,7 @@
 title: Script
 ---
 
-# 💻 Script & Code
-脚本工具、自动化与编程笔记。
+# Script
+那些偶然的一笔
 
-- [Python 自动化脚本](/posts/script/python-auto)
-- [Shell 脚本入门](/posts/script/shell-basic)
+- [一只鸟在等撞死它的玻璃](/posts/Script/一只鸟在等撞死它的玻璃)

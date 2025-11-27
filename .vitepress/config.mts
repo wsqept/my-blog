@@ -17,11 +17,11 @@ export default defineConfig({
     // 注意：你设置了 /posts/Script/，请确保目录结构对应
     nav: [
       { text: '首页', link: '/' },
-      { text: 'Tech', link: '/posts/Tech/' }, 
-      { text: 'Script', link: '/posts/Script/' }, 
-      { text: 'Movie', link: '/posts/Movie/' }, 
-      { text: 'Music', link: '/posts/Music/' }, 
-      { text: 'Reading', link: '/posts/Reading/' },
+      { text: 'Tech', link: '/posts/Tech/index' }, 
+      { text: 'Script', link: '/posts/Script/index' }, 
+      { text: 'Movie', link: '/posts/Movie/index' }, 
+      { text: 'Music', link: '/posts/Music/index' }, 
+      { text: 'Reading', link: '/posts/Reading/index' },
       { 
         text: '关于我', 
         items: [
