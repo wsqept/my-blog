@@ -1,27 +1,31 @@
 ---
-# https://vitepress.dev/reference/default-theme-home-page
 layout: home
 
 hero:
-  name: "我的名字"
-  text: "一句话介绍自己"
-  tagline: "ID is Pink, but Soul is Blue"
+  name: "wsqept's Blog"
+  text: "记录"
+  tagline: ""
   image:
-    src: /avatar.jpg
-    alt: Avatar
+    src: /avatar.jpg   # 确保你把 avatar.jpg 放进了 public 文件夹
+    alt: 我的头像
   actions:
     - theme: brand
-      text: 阅读博客
-      link: /posts/
+      text: 开始阅读
+      link: /posts/life/my-cat
     - theme: alt
       text: 访问 GitHub
-      link: https://github.com/你的用户名
+      link: https://github.com/wsqept
 
 features:
-  - title:  Coding
-    details: 技术笔记、算法和开发日志
-  - title:  Music
-    details: 古典的、现代的；流行的、非主流的
-  - title:  电影
-    details: 20世纪最伟大的艺术
+  - title: Tech
+    details: 编程、技术学习
+    link: /posts/coding/
+  - title: Script
+    details: 昨天、今天、明天
+    link: /posts/life/
+  - title: Movie
+    details: 始于格里菲斯，终于阿巴斯
+  - title: Reading
+    details: 一种生活，精神上的
+    link: /posts/life/
 ---
