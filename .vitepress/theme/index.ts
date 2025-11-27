@@ -1,36 +1,39 @@
 // .vitepress/theme/index.ts
 import DefaultTheme from 'vitepress/theme'
-import { h, watch, nextTick } from 'vue'
+import { h } from 'vue'
 import Giscus from '@giscus/vue'
-import { useRoute, useData } from 'vitepress'
+import { useData, useRoute } from 'vitepress'
+import './style.css' // 确保你还保留着引入css的这行（如果有的话）
 
 export default {
   extends: DefaultTheme,
   Layout() {
-    const { frontmatter } = useData()
+    // 1. 获取当前是否为深色模式的状态 (isDark 是一个响应式变量)
+    const { isDark, frontmatter } = useData()
     const route = useRoute()
 
     return h(DefaultTheme.Layout, null, {
       'doc-after': () => {
-        // 判断逻辑：
-        // 1. 如果页面在 frontmatter 里写了 comments: false，则不显示
-        // 2. 否则默认显示
+        // 判断文章是否允许评论
         if (frontmatter.value.comments !== false) {
           return h(Giscus, {
-            repo: "wsqept/my-blog", // 记得替换你的信息
+            repo: "wsqept/my-blog", // 替换你的信息
             repoId: "R_kgDOQd0wTg",
             category: "Announcements",
             categoryId: "DIC_kwDOQd0wTs4CzG8H",
-            mapping: "pathname", // ★★★ 核心：保持这行为 pathname
+            mapping: "pathname",
             strict: "0",
             reactionsEnabled: "1",
             emitMetadata: "0",
             inputPosition: "top",
-            theme: "light",
+            
+            // 2. ★★★ 核心代码 ★★★
+            // 如果 isDark 为真，就用透明深色；否则用浅色
+            theme: isDark.value ? 'transparent_dark' : 'light', 
+            
             lang: "zh-CN",
             loading: "lazy",
-            // 让 Giscus 在切换页面时自动重新加载
-            key: route.path 
+            key: route.path
           })
         }
       }
