@@ -19,13 +19,14 @@ hero:
 features:
   - title: Tech
     details: 编程、技术学习
-    link: /posts/coding/
+    link: /posts/Tech/
   - title: Script
     details: 昨天、今天、明天
-    link: /posts/life/
+    link: /posts/Script/
   - title: Movie
     details: 始于格里菲斯，终于阿巴斯
+    link: /posts/Movie/
   - title: Reading
     details: 一种生活，精神上的
-    link: /posts/life/
+    link: /posts/Reading/
 ---
