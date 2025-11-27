@@ -34,5 +34,5 @@ features:
     link: /posts/Music/index
   - title: Writing
     details: 信念的找回，一种创造
-    link: /posts/Tech/index
+    link: /posts/Writing/index
 ---
