@@ -39,19 +39,10 @@ export default defineConfig({
           items: [
             // 这里的 link 对应你实际创建的 .md 文件
             // 例如: /posts/Script/my-story.md
-            { text: '一只鸟等着一面撞死它的玻璃', link: '/posts/Script/一只鸟等着一面撞死它的玻璃' } 
+            { text: 'Script', link: '/posts/Script/index' } 
           ]
         }
       ],
-      '/posts/Tech/': [
-        {
-          text: '技术笔记',
-          items: [
-            // 例如: /posts/Tech/java.md
-            { text: '示例笔记', link: '/posts/Tech/example' }
-          ]
-        }
-      ]
     },
 
     // 4. 社交图标
